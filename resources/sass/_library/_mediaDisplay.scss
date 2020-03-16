@@ -1,0 +1,23 @@
+.pc{
+  display: block!important;
+
+  @include sp{
+    display: none!important;
+  }
+}
+
+.tab{
+  display: none!important;
+
+  @include tab{
+    display: block!important;
+  }
+}
+
+.sp{
+  display: none!important;
+
+  @include sp{
+    display: block!important;
+  }
+}

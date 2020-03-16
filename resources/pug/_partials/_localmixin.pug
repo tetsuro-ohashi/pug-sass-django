@@ -1,0 +1,18 @@
+//- サイト固有のmixinはここへ記述
+
+mixin mixinsample(menu)
+  li.sample__item: a(href=menu.href, class='menu_'+index)!=menu.text
+
+-
+  function breadcrumb(lists) {
+    return Math.ceil( (dayNum + start - 1) / 7 );
+  }
+
+
+mixin breadcrumb(lists)
+  - var list = [lists];
+  - var listDOM = [];
+  - for( var i=0; i<list.length; i++){
+      li.breadcrumb__list
+        a(href="/"+lists[i])!=lists[i]
+  - }

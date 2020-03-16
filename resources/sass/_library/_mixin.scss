@@ -1,0 +1,44 @@
+//sass内で使用するmixin類や変数はここへ
+
+$widthPc: 1400px; //PC
+$widthTab: 1024px; //PC
+$widthSp: 768px; //SP
+
+@mixin pc {
+  @media print, screen and (min-width: $widthTab) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media only screen and (max-width: ($widthTab)) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media only screen and (max-width: ($widthSp)) {
+    @content;
+  }
+}
+
+@mixin overTheSP {
+  @media print, screen and (min-width: ($widthSp + 1)) {
+    @content;
+  }
+}
+
+@mixin contentsWidth {
+  max-width: 1300px;
+  width: calc(100% - 40px);
+  margin: auto;
+}
+
+@mixin hover(){
+  &:hover{
+    opacity: .7;
+    text-decoration: none;
+  }
+}
+
+

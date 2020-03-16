@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!--Global site tag (gtag.js) - Google Analytics-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=XX-XXXXXXXX-X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'XX-XXXXXXXX-X');
+    </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <!-- META-->
+    <title>Site Title</title>
+    <meta name="description" content="ページ説明">
+    <meta name="keywords" content="ページキーワード,pagekeyword">
+    <meta name="twitter:site" content="http://www.sitetitle.com">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content="ページ説明">
+    <meta name="twitter:image:src" content="http://www.sitetitle.com/assets/img/og_image.png">
+    <meta property="og:title" content="Site Title">
+    <meta property="og:site_name" content="Site Title">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:image" content="http://www.sitetitle.com/assets/img/og_image.png">
+    <meta property="og:description" content="ページ説明">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="152x152" href="/assets/favicons/favicon-152x152.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#000000">
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/app.css' %}">
+  </head>
+  <body>
+    <div class="wrapper">{% include /includes/header %}
+      <h1>{{ post.title }}</h1>{{ post.content| safe }}<a href="{% url 'posts:index' %}">一覧</a>{% include /includes/footer %}
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/assets/js/app.js"></script>
+  </body>
+</html>

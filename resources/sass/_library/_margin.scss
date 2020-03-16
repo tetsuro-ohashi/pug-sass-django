@@ -1,0 +1,36 @@
+
+@for $i from 1 through 40 {
+  $i: $i * 5;
+  .mt-#{$i} {
+    margin-top: #{$i}px!important;
+  }
+  .mr-#{$i} {
+    margin-right: #{$i}px!important;
+  }
+  @include pc{
+    .pc-mt-#{$i} {
+      margin-top: #{$i}px!important;
+    }
+    .pc-mr-#{$i} {
+      margin-right: #{$i}px!important;
+    }
+  }
+  @include sp{
+    .sp-mt-#{$i} {
+      margin-top: #{$i}px!important;
+    }
+    .sp-mr-#{$i} {
+      margin-right: #{$i}px!important;
+    }
+  }
+}
+
+.m-auto{
+  margin: auto;
+}
+
+@include sp{
+  .m-auto{
+    margin: auto;
+  }
+}

@@ -1,0 +1,26 @@
+extends /_partials/_layout
+block append vars
+  - metas.pageClass = "works"
+block append style
+  //- ページ個別にスタイルシートを追加したい場合はここへ記述
+block append end_of_body
+  //- ページ個別にJsを追加したい場合はここへ記述
+block contents
+  | {% if latest_post_list %}
+  ul
+    | {% for post in latest_post_list %}
+    li
+      a(href="{% url 'posts:detail' post.id %}") {{ post.title }}
+    |     {% endfor %}
+  | {% else %}
+  p No posts are available.
+  | {% endif %}
+  | {% if latest_work_list %}
+  ul
+    | {% for work in latest_work_list %}
+    li
+      a(href="{% url 'works:detail' work.id %}") {{ work.title }}
+    |     {% endfor %}
+  | {% else %}
+  p No posts are available.
+  | {% endif %}

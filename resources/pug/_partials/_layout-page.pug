@@ -1,0 +1,15 @@
+extends /_partials/_layout
+block append vars
+  - metas.title = ' | ' + sitetitle
+  - metas.url = siteurl + '/lower/'
+  - metas.image = 'imageimagge'
+  - metas.description = 'description'
+  - metas.keyword = sitekeywords + ',keyword'
+  - pageClass = ''
+block contents
+  div
+    h1!=pageTitle
+    p 下層ページ共通部
+    block contents-page
+      //- ここに各下層ページで指定した内容が入ります
+    p 下層ページ共通部

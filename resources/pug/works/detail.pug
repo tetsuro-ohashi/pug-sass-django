@@ -1,0 +1,10 @@
+extends /_partials/_layout
+block append vars
+  - metas.pageClass = "works"
+block append style
+  //- ページ個別にスタイルシートを追加したい場合はここへ記述
+block append end_of_body
+  //- ページ個別にJsを追加したい場合はここへ記述
+block contents
+  h1 {{ work.title }}
+  | {{ work.content| safe }}

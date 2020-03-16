@@ -1,0 +1,39 @@
+//- 汎用mixin サイト固有のmixinはlocalmixinへ記述してください
+//- mixin
+mixin meta(metas)
+  meta(name="description", content=metas.description)
+  meta(name="keywords", content=metas.keyword)
+  //- meta(name="author", content="")
+
+mixin inc_meta_ogp(metas)
+  meta(name="twitter:site", content=siteurl)
+  meta(name="twitter:card", content="summary")
+  meta(name="twitter:description", content=metas.description)
+  meta(name="twitter:image:src", content=siteurl + "/assets/img/og_image.png")
+  //- meta(name="twitter:creator", content="")
+  meta(property="og:title", content=metas.title)
+  meta(property="og:site_name", content=metas.site_name)
+  meta(property="og:type", content="website")
+  meta(property="og:locale", content="ja_JP")
+  meta(property="og:image", content=siteurl + "/assets/img/og_image.png")
+  meta(property="og:description", content=metas.description)
+  //- meta(property="fb:app_id", content="任意のID")
+
+mixin googlemap(setting)
+  | #{"\n"}
+  |var latlng = new google.maps.LatLng(#{setting.latlng[0]}, #{setting.latlng[1]});
+  |var myOptions = {zoom: 15,center: latlng,mapTypeId: google.maps.MapTypeId.ROADMAP,styles: [{"elementType": "geometry","stylers": [{"saturation": -100}    ]  },  {    "elementType": "labels",    "stylers": [      {        "saturation": -100      }    ]  }]};
+  |var #{setting.map} = new google.maps.Map(document.getElementById("#{setting.map}"),myOptions);
+  |var marker = new google.maps.Marker({position: latlng,map: #{setting.map},icon: 'img/pin.png',});
+
+
+mixin imgsrcset(setting, set2x=false)
+  -
+    var srcary = setting.src.split('.');
+    var src2x = dir + srcary[0] + '@2x.' + srcary[1] + ' 2x';
+  if(set2x)
+    img(src!=dir + srcary[0] + '@2x.' + srcary[1], alt!=setting.alt)
+  else
+    img(src!=dir + setting.src, srcset!=src2x, alt!=setting.alt, class!=setting.class)
+
+include _localmixin

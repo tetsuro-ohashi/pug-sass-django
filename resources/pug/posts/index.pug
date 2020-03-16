@@ -1,0 +1,20 @@
+extends /_partials/_layout
+block append vars
+  - metas.pageClass = "posts"
+block append style
+  //- ページ個別にスタイルシートを追加したい場合はここへ記述
+block append end_of_body
+  //- ページ個別にJsを追加したい場合はここへ記述
+block contents
+  h1 スクロールするとコンテンツがフェードインします
+  | {% if latest_post_list %}
+  link(rel="stylesheet" type="text/css" href="{% static 'assets/css/app.css' %}")
+  ul
+    | {% for post in latest_post_list %}
+    li
+      a(href="{% url 'posts:detail' post.id %}") {{ post.title }}
+    |     {% endfor %}
+  | {% else %}
+  p No posts are available.
+  | {% endif %}
+  a(href="{% url 'posts:index' %}") top
