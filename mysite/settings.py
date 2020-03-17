@@ -27,7 +27,7 @@ SECRET_KEY = 'i&*i=w_ij9+6v5gq)fj54&2w@40k=wtz8!5%5^bpwxkc1he+ud'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', 'www.tetsuro-ohashi.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
@@ -82,9 +82,9 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tetsuro_ohashi',
-        'USER': 'thisco_pc',
-        'PASSWORD': 'aoiro3704',
+        'NAME': 'DB',
+        'USER': 'user',
+        'PASSWORD': 'pass',
         'HOST': 'localhost',
         'PORT': '5432',
     }
