@@ -1,0 +1,138 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+ul,
+ol,
+dl,
+li,
+dt,
+dd,
+p,
+div,
+span,
+img,
+a,
+table,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  font-feature-settings:"palt";
+}
+
+
+article,
+header,
+footer,
+aside,
+figure,
+figcaption,
+nav,
+section {
+    display: block;
+}
+
+button{
+  border: 0;
+  font: unset;
+  background-color: unset;
+  padding: 0;
+}
+
+
+html {
+  font-size: 62.5%;
+  font-weight: 400;
+  font-family: Helvetica Neue,Helvetica,'Noto Sans Japanese', sans-serif;
+}
+
+_::-webkit-full-page-media, _:future, :root html{
+  font-weight: 500;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1;
+
+  &:first-line {
+    line-height: 1;
+  }
+
+  position: initial;
+  top: auto;
+
+  &[data-modalActive="true"]{ //modal.js
+    position: fixed;
+    z-index: 10;
+  }
+}
+
+ol,
+ul {
+  list-style: none;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+img{
+  height: auto;
+  width: 100%;
+}
+
+input[type="text"]{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-appearance: none;
+  max-width: 100%;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background: none;
+}
+input[type="email"]{
+  @extend input[type="text"];
+}
+
+input[type="tel"]{
+  @extend input[type="text"];
+}
+input[type="checkbox"]{
+  @extend input[type="text"];
+}
+textarea{
+  @extend input[type="text"];
+}
+select{
+  appearance: none;
+  border-radius: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background: none transparent;
+  vertical-align: middle;
+  font-size: inherit;
+  color: inherit;
+  box-sizing: content-box;
+
+  &::-ms-expand {
+    display: none;
+  }
+}

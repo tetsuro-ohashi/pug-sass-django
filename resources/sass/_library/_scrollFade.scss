@@ -1,0 +1,16 @@
+//animation設定
+.fade-off {
+    opacity: 0;
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    -o-transition: all 0.6s;
+    -ms-transition: all 0.6s;
+    transition: all 0.6s;
+}
+
+.fade-on {
+    opacity: 1;
+}
+[data-fancybox]{
+	cursor: pointer;
+}

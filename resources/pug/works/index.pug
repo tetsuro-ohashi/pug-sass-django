@@ -1,0 +1,23 @@
+| {% extends "base.html" %}
+| {% block title %}Hello,World{% endblock %}
+| {% block pageClass %}world{% endblock %}
+| {% block content %}
+| {% if latest_post_list %}
+ul
+  | {% for post in latest_post_list %}
+  li
+    a(href="{% url 'posts:detail' post.id %}") {{ post.title }}
+  |     {% endfor %}
+| {% else %}
+p No posts are available.
+| {% endif %}
+| {% if latest_work_list %}
+ul
+  | {% for work in latest_work_list %}
+  li
+    a(href="{% url 'works:detail' work.id %}") {{ work.title }}
+  |     {% endfor %}
+| {% else %}
+p No posts are available.
+| {% endif %}
+| {% endblock %}
